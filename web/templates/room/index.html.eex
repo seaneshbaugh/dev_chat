@@ -1,0 +1,7 @@
+<h2>Rooms</h2>
+<ul>
+  <%= for room <- @rooms do %>
+    <li><%= link room.name, to: room_path(@conn, :show, room.slug) %></li>
+  <% end %>
+</ul>
+<%= link "New Room", to: room_path(@conn, :new), class: "btn btn-primary" %>

@@ -16,7 +16,9 @@ defmodule DevChat.Router do
   scope "/", DevChat do
     pipe_through :browser # Use the default browser stack
 
-    get "/", PageController, :index
+    get "/", RoomController, :index
+
+    resources "/rooms", RoomController, except: [:index, :edit, :update, :destroy]
   end
 
   # Other scopes may use custom stacks.
