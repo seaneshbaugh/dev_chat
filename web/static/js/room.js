@@ -28,11 +28,27 @@ let Room = {
 
         let messageContainer = document.createElement("div");
 
-        messageContainer.classList.add("message", "col-sm-12");
+        messageContainer.classList.add("message", "row");
 
-        messageContainer.appendChild(document.createTextNode(`${response.user_token.slice(0, 8)} (${messageTimestamp}): ${response.body}`));
+        let messageHeader = document.createElement("div");
+
+        messageHeader.classList.add("message-header", "col-sm-12", "col-lg-5");
+
+        messageHeader.appendChild(document.createTextNode(`${response.user_token.slice(0, 8)} (${messageTimestamp}):`))
+
+        messageContainer.appendChild(messageHeader);
+
+        let messageBody = document.createElement("div");
+
+        messageBody.classList.add("message-body", "col-sm-12", "col-md-9", "col-lg-7");
+
+        messageBody.appendChild(document.createTextNode(`${response.body}`));
+
+        messageContainer.appendChild(messageBody);
 
         messagesContainer.appendChild(messageContainer);
+
+        messagesContainer.scrollTop = messagesContainer.scrollHeight;
       }
     });
 

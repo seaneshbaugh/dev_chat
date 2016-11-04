@@ -1,6 +1,6 @@
 <h2>Room: <%= @room.name %></h2>
 <div id="room" data-name="<%= @room.slug %>">
-  <div class="messages row"></div>
+  <div class="messages"></div>
   <div class="row">
     <div class="col-sm-12">
       <div class="input-group">
