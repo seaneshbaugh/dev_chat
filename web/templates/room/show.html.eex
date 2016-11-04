@@ -1,1 +1,14 @@
 <h2>Room: <%= @room.name %></h2>
+<div id="room" data-name="<%= @room.slug %>">
+  <div class="messages row"></div>
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="input-group">
+        <input type="text" class="new-message-text-input form-control" placeholder="New Message" />
+        <span class="input-group-btn">
+          <button type="submit" class="new-message-submit-button btn btn-primary">Submit</button>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>

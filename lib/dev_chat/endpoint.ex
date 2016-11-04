@@ -38,5 +38,7 @@ defmodule DevChat.Endpoint do
     key: "_dev_chat_key",
     signing_salt: "tSa7jSrl"
 
+  plug DevChat.Plugs.SetUserToken
+
   plug DevChat.Router
 end

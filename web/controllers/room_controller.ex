@@ -8,7 +8,9 @@ defmodule DevChat.RoomController do
   end
 
   def show(conn, %{"id" => slug}) do
-    render conn, "show.html", room: DevChat.Repo.one(from room in Room, where: room.slug == ^slug)
+    user_token = conn.assigns[:user_token]
+
+    render conn, "show.html", room: DevChat.Repo.one(from room in Room, where: room.slug == ^slug), user_token: user_token
   end
 
   def new(conn, _params) do
